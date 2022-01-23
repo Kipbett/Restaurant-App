@@ -8,6 +8,10 @@
 
 
     <GridView
+        android:columnWidth="60pt"
+        android:numColumns="auto_fit"
+        android:id="@+id/food_grid"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@color/grey" />
 </LinearLayout>
