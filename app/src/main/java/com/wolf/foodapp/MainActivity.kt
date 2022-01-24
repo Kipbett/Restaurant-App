@@ -1,6 +1,7 @@
 package com.wolf.foodapp
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -64,8 +65,16 @@ class MainActivity : AppCompatActivity() {
             var foodImage:ImageView = foodView.findViewById(R.id.imageFoodName)
             var foodName:TextView = foodView.findViewById(R.id.textFoodName)
 
-            foodImage.setImageResource(food.food_img)
+            foodImage.setImageResource(food.food_img!!)
             foodName.text = food.food_name
+
+            foodImage.setOnClickListener {
+                var intent:Intent = Intent(context, FoodDescActivity::class.java)
+                intent.putExtra("name", food.food_name)
+                intent.putExtra("description", food.food_desc)
+                intent.putExtra("image", food.food_img)
+                context!!.startActivity(intent)
+            }
 
             return foodView
         }

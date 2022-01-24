@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Food App</string>
     <string name="foodName">Food Name</string>
+    <string name="foodDesc">Food Description</string>
 </resources>
